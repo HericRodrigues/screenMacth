@@ -1,5 +1,6 @@
 package br.com.hericStreamer.screenmatch;
 
+import br.com.hericStreamer.screenmatch.model.DadosEpisodios;
 import br.com.hericStreamer.screenmatch.model.DadosSerie;
 import br.com.hericStreamer.screenmatch.service.ConverterDados;
 import br.com.hericStreamer.screenmatch.service.consumeApi;
@@ -25,6 +26,9 @@ public class ScreenmatchApplication implements CommandLineRunner {
 		ConverterDados conversor = new ConverterDados();
 		DadosSerie dados = conversor.obterDados(json,DadosSerie.class);
 		System.out.println(dados);
+		json = consumeApi.obterDados("https://www.omdbapi.com/?t=fallout&season=1&episode=2&apikey=6585022c");
+		DadosEpisodios dadosEpisodios = conversor.obterDados(json,DadosEpisodios.class);
+		System.out.println(dadosEpisodios);
 
 	}
 }
