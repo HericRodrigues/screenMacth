@@ -4,8 +4,6 @@ import br.com.hericStreamer.screenmatch.model.IConverterDados;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-
 public class ConverterDados implements IConverterDados {
     private ObjectMapper mapper = new ObjectMapper();
 
